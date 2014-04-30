@@ -1,5 +1,5 @@
 from django.views import generic
-
+from .models import GPS
 
 # Create your views here.
 
