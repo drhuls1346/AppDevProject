@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check in item page</title>
+    <style>body {background-color:lightblue;}</style>
+</head>
+<body>
+<h2>Please select an item to check in.</h2>
+    <ul>
+        {% for unit in checkedout_units %}
+            <li>Name:  {{ unit.name }}
+                Type: {{ unit.utype }}
+                Status: {{ unit.status|yesno:"Checked Out, Checked In" }} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
