@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Home Page</title>
+    <style>body {background-color:lightblue;}</style>
+</head>
+<body>
+<h2>Welcome to my web based inventory program!</h2>
+<h2>***This website does not actually allow the user to input data into the database.***</h2>
+<h2>***To input or alter data, please use the <a href="http://127.0.0.1:8000/admin">Admin Page</a>***</h2>
+</body>
+<h2>Please select the action that you would like to proform.</h2>
+<p><a href="http://127.0.0.1:8000/add_item">Add an item into the inventory database</a></p>
+<p><a href="http://127.0.0.1:8000/remove_item">Remove an item from the inventory database</a></p>
+<p><a href="http://127.0.0.1:8000/update_item">Update an item</a></p>
+<p><a href="http://127.0.0.1:8000/check_out_item">Check out an item</a></p>
+<p><a href="http://127.0.0.1:8000/check_in_item">Check an item back in</a></p>
+<p>All items that are currently in the inventory:</p>
+<ul>
+    {% for unit in unit %}
+        <li>Name: {{ unit.name }}
+            Type: {{ unit.unittype }}
+            Status: {{ unit.status|yesno:"Checked Out, Checked In" }}
+            Email Address: {{ unit.email }}
+            Phone Number: {{ unit.phone }}</li>
+    {% endfor %}
+</ul>
+</html>
