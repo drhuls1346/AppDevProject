@@ -6,5 +6,15 @@
 </head>
 <body>
 <h2>Please enter the name of item that you would like to update in the inventory.</h2>
+<p>GPS units that are currently in the inventory:</p>
+<ul>
+    {% for unit in unit %}
+        <li>Name: {{ unit.name }}
+            Type: {{ unit.unittype }}
+            Status: {{ unit.status|yesno:"Checked Out, Checked In" }}
+            Email Address: {{ unit.email }}
+            Phone Number: {{ unit.phone }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
